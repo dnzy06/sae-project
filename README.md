@@ -18,15 +18,14 @@ An implementation of sparse autoencoders (SAEs) to decompose GPT-2 activations i
 
 ### Example Features
 
-**Feature 42**: "Animal nouns (mammals)"
-- Activates on: cat, dog, horse, elephant
-- Activation strength: 0.8-2.3
+**Feature 6**: "Temporal reference words indicating past states or events"
+- Activates on: previously, originally, once, initially
 
-**Feature 127**: "Past tense verbs"
-- Activates on: walked, jumped, said, went
-- Activation strength: 0.5-1.8
+**Feature 8**: "Diplomatic/political relationships and negotiations"
+- Activates on: ties, relations, agreed, agreement, talks
 
-[Add more examples]
+**Feature 34**: "Sleep-related words and concepts"
+- Activates on: sleep, sleeping, sleeps, asleep
 
 ## Installation
 ```bash
@@ -55,7 +54,3 @@ pip install -r requirements.txt
 - Compare different expansion factors
 - Test intervention capabilities
 - Scale to larger models
-
-## References
-
-[List papers and resources]
