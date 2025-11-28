@@ -11,6 +11,9 @@ __pycache__/
 *.ipynb_checkpoints
 
 # Data and models (too large for git)
+data/activations_metadata.json
+data/feature_examples.json
+data/feature_labels.json
 
 # Outputs
 outputs/
