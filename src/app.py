@@ -4,8 +4,20 @@ import torch
 import numpy as np
 from sae_model import SparseAutoencoder
 import re
+from pathlib import Path
 
-models_dir = "models/"
+# Define paths
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+MODELS_DIR = PROJECT_ROOT / "models"
+DATA_DIR = PROJECT_ROOT / "data"
+
+# Page config
+st.set_page_config(
+    page_title="SAE Feature Explorer",
+    page_icon="🔍",
+    layout="wide"
+)
 
 # Page config
 st.set_page_config(
@@ -18,7 +30,7 @@ st.set_page_config(
 @st.cache_resource
 def load_data():
     """Load SAE model and feature data"""
-    checkpoint = torch.load(models_dir + "sae_topk_final.pt", map_location='cpu')
+    checkpoint = torch.load(MODELS_DIR / "sae_topk_final.pt", map_location='cpu')
     # Extract config if saved, otherwise use defaults
     if 'config' in checkpoint:
         config = checkpoint['config']
@@ -36,14 +48,14 @@ def load_data():
 
     
     # Load labels
-    with open("data/processed_feature_labels.json", "r") as f:
+    with open(DATA_DIR / "processed_feature_labels.json", "r") as f:
         raw_labels = json.load(f)
     
     # Clean labels
     labels = {k: clean_label(v) for k, v in raw_labels.items()}
     
     # Load examples
-    with open("data/feature_examples.json", "r") as f:
+    with open(DATA_DIR / "feature_examples.json", "r") as f:
         examples = json.load(f)
     
     return sae, labels, examples
