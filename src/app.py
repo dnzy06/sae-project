@@ -5,7 +5,7 @@ import numpy as np
 from sae_model import SparseAutoencoder
 import re
 
-models_dir = "../models/"
+models_dir = "models/"
 
 # Page config
 st.set_page_config(
@@ -36,14 +36,14 @@ def load_data():
 
     
     # Load labels
-    with open("../data/processed_feature_labels.json", "r") as f:
+    with open("data/processed_feature_labels.json", "r") as f:
         raw_labels = json.load(f)
     
     # Clean labels
     labels = {k: clean_label(v) for k, v in raw_labels.items()}
     
     # Load examples
-    with open("../data/feature_examples.json", "r") as f:
+    with open("data/feature_examples.json", "r") as f:
         examples = json.load(f)
     
     return sae, labels, examples
