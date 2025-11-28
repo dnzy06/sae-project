@@ -136,14 +136,12 @@ with col1:
                     expanded=(i == 0) 
                 ):
                     # Highlight the token in context
-                    text = ex['text'][:100]
+                    text = ex['text'][:500]
                     token = ex['token'].replace('Ġ', ' ')  # Handle GPT-2 tokenization
                     
                     st.markdown("**Context:**")
                     st.text(text)
-                    
-                    # Show position
-                    st.caption(f"Token position: {ex['token_idx']}")
+                    st.text(f"Token: {token}")
         
         with tab2:
             st.markdown("### Activation Statistics")
@@ -169,6 +167,7 @@ with col1:
             ax.set_title(f"Distribution of Activations for Feature {selected_feature}")
             ax.grid(True, alpha=0.3)
             st.pyplot(fig)
+
         
         with tab3:
             st.markdown("### Activation Visualization")
