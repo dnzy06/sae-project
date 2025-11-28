@@ -13,6 +13,7 @@ __pycache__/
 # Data and models (too large for git)
 data/activations_metadata.json
 data/feature_labels.json
+data/activations_layer7.npy
 
 # Outputs
 outputs/

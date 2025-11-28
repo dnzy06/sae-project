@@ -82,7 +82,7 @@ handle.remove()
 print("Saving activations and metadata...")
 
 # Save activations as numpy array (efficient)
-np.save(data_dir + "activations_layer6.npy", np.array(activations_list))
+np.save(data_dir + "activations_layer7.npy", np.array(activations_list))
 
 # Save metadata as JSON (human-readable)
 with open(data_dir + "activations_metadata.json", "w") as f:

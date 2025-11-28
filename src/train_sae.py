@@ -18,7 +18,7 @@ os.makedirs(results_dir, exist_ok=True)
 
 # Load data
 print("Loading activations...")
-activations = np.load(os.path.join(data_dir, "activations_layer6.npy"))
+activations = np.load(os.path.join(data_dir, "activations_layer7.npy"))
 activations = torch.from_numpy(activations).float()
 
 print(f"Loaded {activations.shape[0]} activation vectors of dimension {activations.shape[1]}")

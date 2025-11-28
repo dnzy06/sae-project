@@ -136,17 +136,13 @@ class SparseAutoencoder(nn.Module):
         # Reconstruction loss (MSE)
         recon_loss = torch.mean((x - x_reconstructed) ** 2)
         
-        # Total loss (no L1 penalty needed with Top-K)
-        total_loss = recon_loss
-        
         # L0 (number of non-zero features) - should be exactly k
         l0 = (h_sparse != 0).float().sum(dim=1).mean()
         
         # Mean activation value (for monitoring)
         mean_activation = h_sparse[h_sparse != 0].mean() if (h_sparse != 0).any() else torch.tensor(0.0)
         
-        return total_loss, {
-            'total_loss': total_loss.item(),
+        return recon_loss, {
             'recon_loss': recon_loss.item(),
             'l0': l0.item(),
             'mean_activation': mean_activation.item() if torch.is_tensor(mean_activation) else mean_activation,
