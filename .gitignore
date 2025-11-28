@@ -12,7 +12,6 @@ __pycache__/
 
 # Data and models (too large for git)
 data/activations_metadata.json
-data/feature_examples.json
 data/feature_labels.json
 
 # Outputs
