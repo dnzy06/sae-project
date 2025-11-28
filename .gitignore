@@ -1,0 +1,25 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data and models (too large for git)
+data/
+models/
+*.pt
+*.pth
+*.safetensors
+
+# Outputs
+outputs/
+*.log
+
+# OS
+.DS_Store
