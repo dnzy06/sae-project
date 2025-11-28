@@ -12,10 +12,6 @@ __pycache__/
 
 # Data and models (too large for git)
 data/
-models/
-*.pt
-*.pth
-*.safetensors
 
 # Outputs
 outputs/
